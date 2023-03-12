@@ -13,3 +13,17 @@ for i in range (0,len(datos)):
 datos[["Ca","Thal"]]=datos[["Ca","Thal"]].apply(pd.to_numeric)
 
 scores=["Age","Trestbps", "Chol","Thalach","Oldpeak","Ca","Num"]
+# Histogramas relacionados a las variables
+for i in scores:
+    
+    fig = plt.figure()
+    x=datos[i]
+    grafica=x.plot(kind="hist")
+    grafica.set_title(i)
+plt.show()
+# Boxplots
+for i in scores:
+    fig = plt.figure()
+    grafica=datos.boxplot(column= [str(i)])
+    grafica.set_title(i)
+plt.show()
