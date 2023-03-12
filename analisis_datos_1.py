@@ -27,3 +27,17 @@ for i in scores:
     grafica=datos.boxplot(column= [str(i)])
     grafica.set_title(i)
 plt.show()
+
+# Estadisticas descriptivas
+print(datos.min())
+print(datos.mean())
+print(datos.max())
+print(datos.corr())
+corr=datos.corr()
+#Este codigo exporta a un xlsx el resultado corr.to_excel('correlaciones.xlsx')
+
+for i in scores:
+    for j in scores:
+        fig, ax = plt.subplots()
+        ax.scatter(datos[i],datos[j])
+        plt.show()
